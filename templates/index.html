@@ -1,11 +1,29 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}Override Request{% endblock %}
 
 {% block page_content %}
+
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 25px;
+    }
+</style>
+
 <div class="page-header">
-    <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+  <h1>Course Override Request</h1>
 </div>
-{{ wtf.quick_form(form) }}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success">{{ message }}</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{{ wtf.quick_form(form, button_map={'submit': 'primary'}) }}
+
 {% endblock %}

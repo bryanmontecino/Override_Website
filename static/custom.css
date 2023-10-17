@@ -1,0 +1,23 @@
+body {
+    background-color: #EAC696;
+  }
+  
+  .navbar {
+    background-color: #4E6C50 !important; 
+  }
+  
+  .btn-primary {
+    background-color: #765827;
+    border-color: #765827;
+  }
+  
+  .btn-primary:hover {
+    background-color: #65451F;
+    border-color: #65451F;
+  }
+  
+  .page-header h1 {
+    color: #4E6C50;
+    font-size: 40px;
+    font-weight: bold;
+  }

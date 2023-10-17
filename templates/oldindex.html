@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='custom.css') }}">
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Course Override Request{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Course Override Request</h1>
+</div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{{ wtf.quick_form(form) }}
+{% endblock %}
